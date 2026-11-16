@@ -1,0 +1,6 @@
+# dsh-edge-topbar bundle: mount the host plugin row into the profile.
+# 作者：37duer
+# 可选：如需覆盖默认配置，可加 config 块。
+- insert:
+  - id: dsh-edge-topbar
+    name: dsh-edge-topbar

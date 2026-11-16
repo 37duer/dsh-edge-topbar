@@ -1,0 +1,58 @@
+{
+  "name": "dsh-edge-topbar",
+  "version": "0.2.0",
+  "description": "Edge-only top info bar (date clock, page zoom with memory, fullscreen) for the DeepSeek Harness Web UI.",
+  "license": "MIT",
+  "author": "37duer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/37duer/dsh-edge-topbar.git"
+  },
+  "homepage": "https://github.com/37duer/dsh-edge-topbar#readme",
+  "bugs": {
+    "url": "https://github.com/37duer/dsh-edge-topbar/issues"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.3"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-runtime": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-client-runtime": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness"
+  ]
+}
